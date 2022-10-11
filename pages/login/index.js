@@ -76,16 +76,15 @@ class Login extends React.Component {
             <>
                 <Navbar />
                 <div className='flex place-content-center mt-[15rem]'>
-                    <div className='flex block p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
+                    <div className='flex p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
                         <form className='' onSubmit={this.onSubmit}>
                             <label className='form-label inline-block my-2 text-gray-700'>
                                 Email
                             </label>
                             <input
                                 type='text'
-                                className='form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600'
+                                className='form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid 
+                                border-gray-300 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600'
                                 name='email'
                                 onChange={this.onChange}
                                 placeholder='E-mail Address'
