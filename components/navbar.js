@@ -15,7 +15,7 @@ export default function Navbar({ fixed }) {
                         <Link href='/login'>Log In</Link>
                     </li>
                     <li className='text-xl mx-[40px] pt-1'>
-                        <Link href='/'>Sign Up</Link>
+                        <Link href='/signup'>Sign Up</Link>
                     </li>
                 </ul>
             </nav>
