@@ -19,12 +19,13 @@ import {
 } from 'firebase/firestore'
 
 const config = {
-    apiKey: "AIzaSyDensOAuaYbos3CihROOF4HYndQnq3XvOY",
-    authDomain: "practical-software-mutelu.firebaseapp.com",
-    projectId: "practical-software-mutelu",
-    storageBucket: "practical-software-mutelu.appspot.com",
-    messagingSenderId: "93983625927",
-    appId: "1:93983625927:web:66aae73b938a77c0e3e4e2"
+    apiKey: 'AIzaSyA-fSx_8vdi5kTe2_xvSiDS5OO6In6BIm0',
+    authDomain: 'mutelu-f5e49.firebaseapp.com',
+    projectId: 'mutelu-f5e49',
+    storageBucket: 'mutelu-f5e49.appspot.com',
+    messagingSenderId: '541175842795',
+    appId: '1:541175842795:web:2f810d570e8cdfeaca7bae',
+    measurementId: 'G-FSC67BK1R7',
 }
 
 const app = initializeApp(config)
@@ -62,7 +63,12 @@ const logInWithEmailAndPassword = async (email, password) => {
     }
 }
 
-const registerWithEmailAndPassword = async (firstName, lastName, email, password) => {
+const registerWithEmailAndPassword = async (
+    firstName,
+    lastName,
+    email,
+    password
+) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password)
         const user = res.user
