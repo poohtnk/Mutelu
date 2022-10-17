@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Navbar from '../../components/navbar'
 import Link from 'next/link'
 import { registerWithEmailAndPassword } from '../../firebase/config'
-import { Redirect } from 'react-router-dom'
 
 function SignUp() {
     const [firstName, setFirstname] = useState('')
@@ -69,9 +68,10 @@ function SignUp() {
     return (
         <>
             <Navbar />
-            <div className='flex place-content-center mt-[15rem]'>
+            <div className='flex place-content-center mt-[8rem]'>
                 <div className='flex p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
                     <form className='' onSubmit={onSubmit}>
+                        <div className='text-center text-3xl'>Sign Up</div>
                         <label className='form-label inline-block my-2 text-gray-700'>
                             First Name
                         </label>
