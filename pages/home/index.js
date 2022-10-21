@@ -4,9 +4,11 @@ import {
     signInWithGoogle,
     logout,
 } from '../../firebase/config'
+import Signup from '../signup';
 
 class Home extends React.Component {
     render() {
-        return <div></div>
+        return <div>Welcome to Mutelu</div>
     }
 }
+export default Home;
