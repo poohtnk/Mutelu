@@ -75,10 +75,9 @@ class Login extends React.Component {
         return (
             <>
                 <Navbar />
-                <div className='flex place-content-center mt-[12rem]'>
+                <div className='flex place-content-center mt-[15rem]'>
                     <div className='flex p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
                         <form className='' onSubmit={this.onSubmit}>
-                            <div className='text-center text-3xl'>Log In</div>
                             <label className='form-label inline-block my-2 text-gray-700'>
                                 Email
                             </label>
@@ -113,7 +112,7 @@ class Login extends React.Component {
                             </div>
                             <div>
                                 Do not have an account?{' '}
-                                <Link href='/signup'>Register</Link> now.
+                                <Link href='/register'>Register</Link> now.
                             </div>
                         </form>
                     </div>

@@ -6,6 +6,5 @@ export default function Home() {
             <Navbar />
             <div className='text-7xl text-center pt-20'>Welcome to Mutelu Page!</div>
         </div>
-        
     )
 }
