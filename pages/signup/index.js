@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../../components/navbar'
 import Link from 'next/link'
 import { registerWithEmailAndPassword } from '../../firebase/config'
-
+import { useRouter } from 'next/router'
 function SignUp() {
     const [firstName, setFirstname] = useState('')
     const [lastName, setLastName] = useState('')
@@ -64,6 +64,10 @@ function SignUp() {
                 setCurrentUser(false)
             }
         }
+    }
+    const router = useRouter()
+    if (currentUser) {
+        router.push('/home')
     }
     return (
         <>
@@ -129,7 +133,7 @@ function SignUp() {
                             className='w-full bg-sky-500 p-1 rounded-lg mt-2 text-white font-bold'
                             type='submit'
                         >
-                            <Link href='/'>Sign Up</Link>
+                            Sign Up
                         </button>
                         <div>
                             Already have an account?{' '}

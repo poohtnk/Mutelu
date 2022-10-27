@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {
     auth,
     logInWithEmailAndPassword,
@@ -25,24 +25,26 @@ function Login() {
     const handlePasswordInput = (e) => {
         setPassword(e.target.value)
     }
+    const router = useRouter()
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log('Pass')
-        console.log(email, password)
-        // const { email, password } = this.state
-        console.log(email, password)
-        // TODO: implement signInWithEmailAndPassword()
         try {
             logInWithEmailAndPassword(email, password)
-            setCurrentUser(true)
         } catch {
-            console.log(error.message)
+            alert('Login Unsuccessful')
             setMessage(error.message)
         }
     }
-    const router = useRouter()
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                setCurrentUser(user)
+            }
+        })
+    })
+
     if (currentUser) {
-        router.push('/')
+        router.push('/home')
     }
     return (
         <>

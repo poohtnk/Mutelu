@@ -17,9 +17,9 @@ function Home() {
             }
             console.log(currentUser)
         })
-        if (!currentUser) {
-            router.push('/')
-        }
+        // if (!currentUser) {
+        //     router.push('/login')
+        // }
     })
 
     if (currentUser) {
@@ -28,6 +28,17 @@ function Home() {
                 <Navbar />
                 <div>Hello {currentUser.email}</div>
                 <button onClick={logout}>Logout</button>
+            </>
+        )
+    } else {
+        return (
+            <>
+                <div>
+                    <Navbar />
+                    <div className='text-7xl text-center pt-20'>
+                        Welcome to Mutelu Page!
+                    </div>
+                </div>
             </>
         )
     }
