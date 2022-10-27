@@ -4,11 +4,32 @@ import {
     signInWithGoogle,
     logout,
 } from '../../firebase/config'
-import Signup from '../signup';
+import React, { useState, useContext, useEffect } from 'react'
+import Navbar from '../../components/navbar'
+import { useRouter } from 'next/router'
+function Home() {
+    const [currentUser, setCurrentUser] = useState(null)
+    const router = useRouter()
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                setCurrentUser(user)
+            }
+            console.log(currentUser)
+        })
+        if (!currentUser) {
+            router.push('/')
+        }
+    })
 
-class Home extends React.Component {
-    render() {
-        return <div>Welcome to Mutelu</div>
+    if (currentUser) {
+        return (
+            <>
+                <Navbar />
+                <div>Hello {currentUser.email}</div>
+                <button onClick={logout}>Logout</button>
+            </>
+        )
     }
 }
-export default Home;
+export default Home
