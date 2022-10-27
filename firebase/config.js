@@ -54,12 +54,11 @@ const signInWithGoogle = async () => {
 }
 
 const logInWithEmailAndPassword = async (email, password) => {
-    console.log('logIn Is Called')
     try {
         await signInWithEmailAndPassword(auth, email, password)
     } catch (err) {
         console.error(err)
-        alert(err.message)
+        alert('Login Unsuccessful')
     }
 }
 
