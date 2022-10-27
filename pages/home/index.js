@@ -7,6 +7,7 @@ import {
 import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../components/navbar'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 function Home() {
     const [currentUser, setCurrentUser] = useState(null)
     const router = useRouter()
@@ -26,8 +27,12 @@ function Home() {
         return (
             <>
                 <Navbar />
-                <div>Hello {currentUser.email}</div>
-                <button onClick={logout}>Logout</button>
+                <div className='text-7xl text-center pt-20'>
+                    Hello {currentUser.email}
+                </div>
+                <Link href='/'>
+                    <button onClick={logout}>Logout</button>
+                </Link>
             </>
         )
     } else {
