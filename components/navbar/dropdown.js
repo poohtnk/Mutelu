@@ -3,7 +3,7 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ButtonUnstyled from '@mui/base/ButtonUnstyled'
-import Link from 'next/link'
+import { NavLink } from './navlink'
 
 export function BasicMenuforActivity() {
     const [anchorEl, setAnchorEl] = React.useState(null)
@@ -36,7 +36,7 @@ export function BasicMenuforActivity() {
                 }}
             >
                 <MenuItem onClick={handleClose}>
-                    <Link href='/praying'>Make a Wish</Link>
+                    <NavLink href='/praying'>Make a Wish</NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>Siamese</MenuItem>
             </Menu>
