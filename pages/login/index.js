@@ -8,7 +8,7 @@ import {
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Link from 'next/link'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import Navbar from '../../components/navbar'
+import Navbar from '../../components//navbar/navbar'
 import { Redirect } from 'react-router-dom'
 import { useRouter } from 'next/router'
 

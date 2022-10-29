@@ -5,7 +5,7 @@ import {
     logout,
 } from '../../firebase/config'
 import React, { useState, useContext, useEffect } from 'react'
-import Navbar from '../../components/navbar'
+import Navbar from '../../components/navbar/navbar'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 function Home() {
