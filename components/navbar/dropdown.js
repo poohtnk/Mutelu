@@ -3,6 +3,8 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ButtonUnstyled from '@mui/base/ButtonUnstyled'
+import Link from 'next/link'
+
 export function BasicMenuforActivity() {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
@@ -33,7 +35,9 @@ export function BasicMenuforActivity() {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem onClick={handleClose}>Make a Wish</MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <Link href='/praying'>Make a Wish</Link>
+                </MenuItem>
                 <MenuItem onClick={handleClose}>Siamese</MenuItem>
             </Menu>
         </div>

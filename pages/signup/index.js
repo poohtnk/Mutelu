@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Navbar from '../../components/navbar'
+import Navbar from '../../components/navbar/navbar'
 import Link from 'next/link'
 import { registerWithEmailAndPassword } from '../../firebase/config'
 import { useRouter } from 'next/router'

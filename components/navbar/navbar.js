@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
-import { auth, logout } from '../firebase/config'
+import { auth, logout } from '../../firebase/config'
 import { BasicMenuforActivity, BasicMenuforMyprofile } from './dropdown'
 import { NavLink } from './navlink'
 export default function Navbar({ fixed }) {
-    const [navbarOpen, setNavbarOpen] = useState(false)
     const [currentUser, setCurrentUser] = useState(null)
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
