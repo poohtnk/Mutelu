@@ -26,19 +26,21 @@ function Home() {
     if (currentUser) {
         return (
             <>
-                <Navbar />
-                <div className='text-7xl text-center pt-20'>
-                    Hello {currentUser.email}
+                <div className='min-h-screen bg-background1 bg-cover'>
+                    <Navbar />
+                    <div className='text-7xl text-center pt-20'>
+                        Hello {currentUser.email}
+                    </div>
+                    <Link href='/'>
+                        <button onClick={logout}>Logout</button>
+                    </Link>
                 </div>
-                <Link href='/'>
-                    <button onClick={logout}>Logout</button>
-                </Link>
             </>
         )
     } else {
         return (
             <>
-                <div>
+                <div className='min-h-screen bg-background1 bg-cover'>
                     <Navbar />
                     <div className='text-7xl text-center pt-20'>
                         Welcome to Mutelu Page!

@@ -48,48 +48,50 @@ function Login() {
     }
     return (
         <>
-            <Navbar />
-            <div className='flex place-content-center mt-[12rem]'>
-                <div className='flex p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
-                    <form className='' onSubmit={onSubmit}>
-                        <div className='text-center text-3xl'>Log In</div>
-                        <label className='form-label inline-block my-2 text-gray-700'>
-                            Email
-                        </label>
-                        <input
-                            type='text'
-                            className='form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid 
+            <div className='min-h-screen bg-background1 bg-cover'>
+                <Navbar />
+                <div className='flex place-content-center mt-[12rem]'>
+                    <div className='flex p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
+                        <form className='' onSubmit={onSubmit}>
+                            <div className='text-center text-3xl'>Log In</div>
+                            <label className='form-label inline-block my-2 text-gray-700'>
+                                Email
+                            </label>
+                            <input
+                                type='text'
+                                className='form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid 
                                 border-gray-300 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600'
-                            name='email'
-                            onChange={handleEmailInput}
-                            placeholder='E-mail Address'
-                        />
-                        <label className='form-label inline-block my-2 text-gray-700'>
-                            Password
-                        </label>
-                        <input
-                            type='password'
-                            className='form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded
+                                name='email'
+                                onChange={handleEmailInput}
+                                placeholder='E-mail Address'
+                            />
+                            <label className='form-label inline-block my-2 text-gray-700'>
+                                Password
+                            </label>
+                            <input
+                                type='password'
+                                className='form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600'
-                            name='password'
-                            onChange={handlePasswordInput}
-                            placeholder='Password'
-                        />
-                        <button
-                            className='w-full bg-sky-500 p-1 rounded-lg mt-2 text-white font-bold'
-                            type='submit'
-                        >
-                            Login
-                        </button>
-                        <div>
-                            <Link href='/reset'>Forgot Password</Link>
-                        </div>
-                        <div>
-                            Do not have an account?{' '}
-                            <Link href='/signup'>Register</Link> now.
-                        </div>
-                    </form>
+                                name='password'
+                                onChange={handlePasswordInput}
+                                placeholder='Password'
+                            />
+                            <button
+                                className='w-full bg-sky-500 p-1 rounded-lg mt-2 text-white font-bold'
+                                type='submit'
+                            >
+                                Login
+                            </button>
+                            <div>
+                                <Link href='/reset'>Forgot Password</Link>
+                            </div>
+                            <div>
+                                Do not have an account?{' '}
+                                <Link href='/signup'>Register</Link> now.
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>
