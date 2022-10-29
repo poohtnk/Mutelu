@@ -9,6 +9,9 @@ module.exports = {
             colors: {
                 'royal-purple': '#5949d9',
             },
+            backgroundImage: {
+                'background1': "url('../asset/img/bg-mutelu.jpg')",
+            },
         },
     },
     plugins: [],

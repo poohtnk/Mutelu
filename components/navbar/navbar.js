@@ -13,7 +13,7 @@ export default function Navbar({ fixed }) {
         })
     })
     return (
-        <div className='bg-white text-black '>
+        <div className='bg-white text-black drop-shadow-md'>
             <nav className='flex justify-between px-[2rem] py-[1.5rem]'>
                 <div className='flex text-3xl font-bold'>
                     <div className='text-royal-purple'>M</div>
@@ -22,18 +22,18 @@ export default function Navbar({ fixed }) {
                 <ul className='menu flex '>
                     {currentUser ? (
                         <>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/home'>Home</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/Search Sanctuary'>
                                     Search
                                 </NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuforActivity />
                             </li>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/'>
                                     <button onClick={logout}>Log Out</button>
                                 </NavLink>
@@ -41,15 +41,15 @@ export default function Navbar({ fixed }) {
                         </>
                     ) : (
                         <>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/'>Home</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/Search Sanctuary'>
                                     Search
                                 </NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink
                                     href='/login'
                                     activestyle={{ fontWeight: 'bold' }}
@@ -57,7 +57,7 @@ export default function Navbar({ fixed }) {
                                     Log In
                                 </NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1'>
+                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/signup'>Sign Up</NavLink>
                             </li>
                         </>
