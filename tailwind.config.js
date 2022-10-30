@@ -8,9 +8,14 @@ module.exports = {
         extend: {
             colors: {
                 'royal-purple': '#5949d9',
+                'royal-purple-light': '#B08CEB',
+                'another-purple': '#9F8CEB',
             },
             backgroundImage: {
                 background1: "url('../asset/img/bg-mutelu.jpg')",
+            },
+            fontFamily: {
+                Inter: ['Inter', 'sans-serif'],
             },
         },
         container: {
