@@ -48,7 +48,7 @@ function Login() {
     }
     return (
         <>
-            <div className='min-h-screen bg-background1 bg-cover'>
+            <div className='min-h-screen bg-mutelu_1 bg-cover'>
                 <Navbar />
                 <div className='flex place-content-center mt-[12rem]'>
                     <div className='flex p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
@@ -78,7 +78,7 @@ function Login() {
                                 placeholder='Password'
                             />
                             <button
-                                className='w-full bg-sky-500 p-1 rounded-lg mt-2 text-white font-bold'
+                                className='w-full bg-royal-purple-light rounded-lg mt-2 text-white font-bold'
                                 type='submit'
                             >
                                 Login

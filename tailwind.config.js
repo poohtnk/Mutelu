@@ -12,7 +12,11 @@ module.exports = {
                 'another-purple': '#9F8CEB',
             },
             backgroundImage: {
-                background1: "url('../asset/img/bg-mutelu.jpg')",
+                mutelu_1: "url('../asset/img/bg-mutelu.jpg')",
+                mutelu_2: "url('../asset/img/bg-mutelu2.jpg')",
+                tube: "url('../asset/img/tube.jpeg')",
+                horoscope: "url('../asset/img/horoscope.png')",
+                magic: "url('../asset/img/black.jpg')",
             },
             fontFamily: {
                 Inter: ['Inter', 'sans-serif'],
