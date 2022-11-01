@@ -22,21 +22,24 @@ export default function Navbar({ fixed }) {
                 <ul className='menu flex '>
                     {currentUser ? (
                         <>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/home'>Home</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/Search Sanctuary'>
                                     Search
                                 </NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuforActivity />
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/'>
                                     <button onClick={logout}>Log Out</button>
                                 </NavLink>
+                            </li>
+                            <li className='text-xl mx-[30px] pt-1 text-royal-purple/80'>
+                                {currentUser.email}
                             </li>
                         </>
                     ) : (

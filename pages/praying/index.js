@@ -62,7 +62,7 @@ function Praying() {
                                 fullWidth
                                 size='small'
                                 required
-                                className='bg-royal-purple-light'
+                                className='bg-royal-purple-light text-white'
                             >
                                 <Select
                                     id='sanctuary-select'
@@ -106,9 +106,11 @@ function Praying() {
                             /> */}
                             <div className='flex flex-col items-center m-4'>
                                 <Button
+                                    color='secondary'
                                     disabled={!done}
                                     type='submit'
-                                    className='bg-royal-purple-light text-white hover:text-royal-purple-light w-auto'
+                                    // className='bg-royal-purple-light text-white hover:text-royal-purple-light w-auto'
+                                    variant='outlined'
                                     onClick={() => {
                                         Swal.fire({
                                             title: 'Your wish have been received!',
