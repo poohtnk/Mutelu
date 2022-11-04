@@ -19,7 +19,6 @@ export default function Home() {
             }
         })
     })
-    console.log(currentUser)
     if (currentUser) {
         router.push('/home')
     }

@@ -16,11 +16,7 @@ function Home() {
             if (user) {
                 setCurrentUser(user)
             }
-            console.log(currentUser)
         })
-        // if (!currentUser) {
-        //     router.push('/login')
-        // }
     })
 
     if (currentUser) {
