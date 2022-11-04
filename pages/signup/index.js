@@ -71,7 +71,7 @@ function SignUp() {
     }
     return (
         <>
-            <div className='min-h-screen bg-background1 bg-cover'>
+            <div className='min-h-screen bg-mutelu_1 bg-cover'>
                 <Navbar />
                 <div className='flex place-content-center mt-[8rem]'>
                     <div className='flex p-6 rounded-lg shadow-lg bg-white max-w-sm items-center text-black'>
@@ -131,7 +131,7 @@ function SignUp() {
                                 placeholder='Confirm your password'
                             />
                             <button
-                                className='w-full bg-sky-500 p-1 rounded-lg mt-2 text-white font-bold'
+                                className='w-full bg-royal-purple-light p-1 rounded-lg mt-2 text-white font-bold'
                                 type='submit'
                             >
                                 Sign Up

@@ -7,6 +7,7 @@ import {
     signInWithGoogle,
     logout,
 } from '../firebase/config'
+import mutelu123 from '../components/Page/background'
 export default function Home() {
     const router = useRouter()
     const [currentUser, setCurrentUser] = useState(null)
@@ -23,11 +24,13 @@ export default function Home() {
         router.push('/home')
     }
     return (
-        <div className='min-h-screen bg-background1 bg-cover'>
-            <Navbar />
-            <div className='text-7xl text-center pt-20'>
-                Welcome to Mutelu Page!
+        <>
+            <div className='min-h-screen bg-mutelu_1 bg-cover'>
+                <Navbar />
+                <div className='font-Inter text-7xl text-center pt-[20rem]'>
+                    MUTELU
+                </div>
             </div>
-        </div>
+        </>
     )
 }
