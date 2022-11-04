@@ -31,17 +31,7 @@ function SignUp() {
     }
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log('Pass')
-        console.log(
-            firstName,
-            lastName,
-            email,
-            password,
-            confirmPassword,
-            message
-        )
         if (password === confirmPassword) {
-            console.log('1')
             try {
                 registerWithEmailAndPassword(
                     firstName,
@@ -49,7 +39,6 @@ function SignUp() {
                     email,
                     password
                 )
-                console.log('true')
                 setCurrentUser(true)
             } catch (error) {
                 if (error.code == 'auth/email-already-in-use') {
