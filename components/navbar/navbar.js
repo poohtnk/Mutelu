@@ -26,9 +26,7 @@ export default function Navbar({ fixed }) {
                                 <NavLink href='/home'>Home</NavLink>
                             </li>
                             <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/Search Sanctuary'>
-                                    Search
-                                </NavLink>
+                                <NavLink href='/searchAmulet'>Search</NavLink>
                             </li>
                             <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuforActivity />
@@ -48,9 +46,7 @@ export default function Navbar({ fixed }) {
                                 <NavLink href='/'>Home</NavLink>
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/Search Sanctuary'>
-                                    Search
-                                </NavLink>
+                                <NavLink href='/searchAmulet'>Search</NavLink>
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink

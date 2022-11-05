@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app'
-
+import { getDatabase } from 'firebase/database'
+import { getAnalytics } from 'firebase/analytics'
 import {
     GoogleAuthProvider,
     getAuth,
@@ -18,9 +19,11 @@ import {
     addDoc,
 } from 'firebase/firestore'
 
-const config = {
+const firebaseConfig = {
     apiKey: 'AIzaSyA-fSx_8vdi5kTe2_xvSiDS5OO6In6BIm0',
     authDomain: 'mutelu-f5e49.firebaseapp.com',
+    databaseURL:
+        'https://mutelu-f5e49-default-rtdb.asia-southeast1.firebasedatabase.app',
     projectId: 'mutelu-f5e49',
     storageBucket: 'mutelu-f5e49.appspot.com',
     messagingSenderId: '541175842795',
@@ -28,9 +31,11 @@ const config = {
     measurementId: 'G-FSC67BK1R7',
 }
 
-const app = initializeApp(config)
+const app = initializeApp(firebaseConfig)
+
 const auth = getAuth(app)
 const db = getFirestore(app)
+const database = getDatabase(app)
 const googleProvider = new GoogleAuthProvider()
 
 const signInWithGoogle = async () => {
@@ -106,4 +111,5 @@ export {
     registerWithEmailAndPassword,
     sendPasswordReset,
     logout,
+    database,
 }
