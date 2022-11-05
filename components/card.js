@@ -13,7 +13,7 @@ export default function Card({ id, title, price, img, description, num }) {
                     className='object-cover h-48 w-96 rounded-2xl'
                 />
                 <div className='px-6 py-4'>
-                    <div className='font-Inter text-xl mb-2 line-clamp-1'>
+                    <div className='font-Inter text-xl mb-2 line-clamp-2 h-[4rem]'>
                         {title}
                     </div>
                     <p className='text-gray-700 text-m mb-2 line-clamp-2'>

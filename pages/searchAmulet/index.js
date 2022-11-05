@@ -28,7 +28,7 @@ function SearchAmulet() {
         setItemsForDisplay(updatedList)
     }
     return (
-        <div className='min-h-screen bg-gradient-to-b from-blue-200 to-fuchsia-300'>
+        <div className='min-h-screen bg-gradient-to-b from-blue-200 to-fuchsia-200'>
             <Navbar />
             <div className='container pt-[2rem]'>
                 <div className='flex min-w-screen place-content-center py-5 rounded-md'>
