@@ -7,11 +7,9 @@ import {
     signInWithGoogle,
     logout,
 } from '../firebase/config'
-import mutelu123 from '../components/Page/background'
 export default function Home() {
     const router = useRouter()
     const [currentUser, setCurrentUser] = useState(null)
-    // const { currentUser } = useContext(AuthContext)
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
