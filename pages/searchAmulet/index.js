@@ -12,7 +12,6 @@ function SearchAmulet() {
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val()
             data.sort((a, b) => (a.name > b.name ? 1 : -1))
-            console.log(typeof data)
             setItems(data)
             setItemsForDisplay(data)
         })

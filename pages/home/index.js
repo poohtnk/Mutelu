@@ -7,17 +7,24 @@ import {
 import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../components/navbar/navbar'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
+import { getDatabase, ref, onValue } from 'firebase/database'
+
 function Home() {
     const [currentUser, setCurrentUser] = useState(null)
-    const router = useRouter()
+    const [currentData, setCurrentData] = useState(null)
     useEffect(() => {
+        const db = getDatabase()
         auth.onAuthStateChanged((user) => {
             if (user) {
                 setCurrentUser(user)
+                const starCountRef = ref(db, '/User/' + user.uid)
+                onValue(starCountRef, (snapshot) => {
+                    const data = snapshot.val()
+                    setCurrentData(data)
+                })
             }
         })
-    })
+    }, [])
 
     if (currentUser) {
         return (
@@ -27,7 +34,7 @@ function Home() {
                     <div className='font-Inter text-7xl text-center pt-[20rem]'>
                         Hello
                         <div className='text-royal-purple text-2xl'>
-                            {currentUser.email}
+                            {currentData.firstName}
                         </div>
                     </div>
                 </div>
