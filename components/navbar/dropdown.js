@@ -4,8 +4,9 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ButtonUnstyled from '@mui/base/ButtonUnstyled'
 import { NavLink } from './navlink'
+import { auth, logout } from '../../firebase/config'
 
-export function BasicMenuforActivity() {
+export function BasicMenuForActivity() {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
     const handleClick = (event) => {
@@ -43,7 +44,7 @@ export function BasicMenuforActivity() {
         </div>
     )
 }
-export function BasicMenuforMyprofile() {
+export function BasicMenuForMyprofile({ name }) {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
     const handleClick = (event) => {
@@ -61,8 +62,9 @@ export function BasicMenuforMyprofile() {
                 aria-haspopup='true'
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
+                className='text-royal-purple/80'
             >
-                My Profile
+                {name}
             </ButtonUnstyled>
             <Menu
                 id='basic-menu'
@@ -73,8 +75,9 @@ export function BasicMenuforMyprofile() {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem onClick={handleClose}>Log Out</MenuItem>
-                <MenuItem onClick={handleClose}>Siamese</MenuItem>
+                <MenuItem onClick={logout}>
+                    <NavLink href='/'>Log Out</NavLink>
+                </MenuItem>
             </Menu>
         </div>
     )

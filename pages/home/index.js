@@ -26,14 +26,14 @@ function Home() {
         })
     }, [])
 
-    if (currentUser) {
+    if (currentUser && currentData) {
         return (
             <>
                 <div className='min-h-screen bg-mutelu_1 bg-cover'>
                     <Navbar />
                     <div className='font-Inter text-7xl text-center pt-[20rem]'>
                         Hello
-                        <div className='text-royal-purple text-2xl'>
+                        <div className='text-royal-purple text-2xl pt-5'>
                             {currentData.firstName}
                         </div>
                     </div>
@@ -43,7 +43,7 @@ function Home() {
     } else {
         return (
             <>
-                <div className='min-h-screen bg-background1 bg-cover'>
+                <div className='min-h-screen bg-mutelu_1 bg-cover'>
                     <Navbar />
                     <div className='text-7xl text-center pt-20'>
                         Welcome to Mutelu Page!
