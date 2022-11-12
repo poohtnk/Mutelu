@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getDatabase } from 'firebase/database'
+import { getDatabase, set, ref } from 'firebase/database'
 import { getAnalytics } from 'firebase/analytics'
 import {
     GoogleAuthProvider,
@@ -76,12 +76,11 @@ const registerWithEmailAndPassword = async (
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password)
         const user = res.user
-        await addDoc(collection(db, 'users'), {
+        await set(ref(database, 'User/' + user.uid), {
             uid: user.uid,
-            firstName,
-            lastName,
-            authProvider: 'local',
-            email,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
         })
     } catch (err) {
         console.error(err)

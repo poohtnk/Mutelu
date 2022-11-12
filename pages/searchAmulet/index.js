@@ -2,7 +2,6 @@ import Navbar from '../../components/navbar/navbar'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import React, { useEffect, useState } from 'react'
 import Card from '../../components/card'
-import SearchIcon from '@mui/icons-material/Search'
 
 function SearchAmulet() {
     const [items, setItems] = useState([])
