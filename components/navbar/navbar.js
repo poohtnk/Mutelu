@@ -37,8 +37,8 @@ export default function Navbar({ fixed }) {
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/searchAmulet'>Search</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
-                                <BasicMenuForActivity />
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
+                                <BasicMenuforActivity />
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuForMyprofile
@@ -53,6 +53,9 @@ export default function Navbar({ fixed }) {
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/searchAmulet'>Search</NavLink>
+                            </li>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
+                                <NavLink href='/searchsanc'>Search sanc</NavLink>
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/login'>Log In</NavLink>
