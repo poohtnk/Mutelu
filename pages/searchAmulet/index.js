@@ -2,7 +2,6 @@ import Navbar from '../../components/navbar/navbar'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import React, { useEffect, useState } from 'react'
 import Card from '../../components/card'
-import SearchIcon from '@mui/icons-material/Search'
 
 function SearchAmulet() {
     const [items, setItems] = useState([])
@@ -13,7 +12,6 @@ function SearchAmulet() {
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val()
             data.sort((a, b) => (a.name > b.name ? 1 : -1))
-            console.log(typeof data)
             setItems(data)
             setItemsForDisplay(data)
         })

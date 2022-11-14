@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar/navbar'
 import Link from 'next/link'
 import { registerWithEmailAndPassword } from '../../firebase/config'
 import { useRouter } from 'next/router'
+
 function SignUp() {
     const [firstName, setFirstname] = useState('')
     const [lastName, setLastName] = useState('')
@@ -25,9 +26,6 @@ function SignUp() {
     }
     const handleConfirmPasswordInput = (e) => {
         setConfirmPassword(e.target.value)
-    }
-    const handleMessageInput = (e) => {
-        setMessage(e.target.value)
     }
     const onSubmit = (e) => {
         e.preventDefault()
