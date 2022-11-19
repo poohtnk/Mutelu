@@ -97,13 +97,6 @@ function Praying() {
                                 required
                                 onChange={handleWishInput}
                             />
-                            {/* <input
-                                type='text'
-                                className='form-control block w-3/4 h-4/6 px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid 
-                                border-another-purple border-8 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600'
-                                name='wish'
-                                onChange={handleWishInput}
-                            /> */}
                             <div className='flex flex-col items-center m-4'>
                                 <Button
                                     color='secondary'

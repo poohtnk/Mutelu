@@ -1,36 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/navbar/navbar'
-import { useRouter } from 'next/router'
-import { getDatabase, ref, onValue } from 'firebase/database'
-import Image from 'next/image'
-import AddIcon from '@mui/icons-material/Add'
-import RemoveIcon from '@mui/icons-material/Remove'
 import Link from 'next/link'
 function Manage() {
-    const router = useRouter()
-    const pid = router.query
-    const db = getDatabase()
-    const starCountRef = ref(db, '/Amulet/' + pid.id)
-    useEffect(() => {
-        onValue(starCountRef, (snapshot) => {
-            setItem(snapshot.val())
-        })
-    }, [])
-
-    const [item, setItem] = useState([])
-    const [num, setNum] = useState(1)
-    const increaseNum = (e) => {
-        if (num < item.quantity) {
-            setNum(num + 1)
-        } else {
-        }
-    }
-    const decreaseNum = (e) => {
-        if (num > 1) {
-            setNum(num - 1)
-        } else {
-        }
-    }
     return (
         <div className='min-h-screen bg-mutelu_2 bg-cover'>
             <Navbar />
