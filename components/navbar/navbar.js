@@ -20,7 +20,7 @@ export default function Navbar({ payment }) {
                 })
             }
         })
-    })
+    }, [])
     if (payment) {
         return (
             <div className='bg-white text-black drop-shadow-md'>
