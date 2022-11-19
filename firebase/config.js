@@ -81,6 +81,7 @@ const registerWithEmailAndPassword = async (
             email: email,
             firstName: firstName,
             lastName: lastName,
+            role: 'user',
         })
     } catch (err) {
         console.error(err)
