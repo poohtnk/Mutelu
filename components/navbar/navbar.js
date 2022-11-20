@@ -40,9 +40,9 @@ export default function Navbar({ fixed }) {
                             <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/searchsanc'>Search sanc</NavLink>
                             </li>
-                            {/* <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuforActivity />
-                            </li> */}
+                            </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuForMyprofile
                                     name={currentData.firstName}
