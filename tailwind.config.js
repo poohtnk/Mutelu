@@ -17,6 +17,7 @@ module.exports = {
                 tube: "url('../asset/img/tube.jpeg')",
                 horoscope: "url('../asset/img/horoscope.png')",
                 magic: "url('../asset/img/black.jpg')",
+                bank: "url('../asset/img/bank.jpg)",
             },
             fontFamily: {
                 Inter: ['Inter', 'sans-serif'],

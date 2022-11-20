@@ -155,11 +155,6 @@ function Checkout() {
                                         className='ml-3'
                                         onChange={handleProvince}
                                     >
-                                        <option
-                                            disabled
-                                            selected
-                                            value=''
-                                        ></option>
                                         {provinces.map((data) => {
                                             return (
                                                 <option
