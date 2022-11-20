@@ -11,9 +11,10 @@ function SearchAmulet() {
     useEffect(() => {
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val()
-            data.sort((a, b) => (a.name > b.name ? 1 : -1))
-            setItems(data)
-            setItemsForDisplay(data)
+            var result = Object.entries(data)
+            result.sort((a, b) => (a[1].name > b[1].name ? 1 : -1))
+            setItems(result)
+            setItemsForDisplay(result)
         })
     }, [])
 
@@ -42,13 +43,13 @@ function SearchAmulet() {
                     {itemsForDisplay.map((data) => {
                         return (
                             <Card
-                                key={data.id}
-                                id={data.id}
-                                title={data.name}
-                                price={data.price}
-                                img={data.img}
-                                description={data.description}
-                                num={data.quantity}
+                                key={data[0]}
+                                id={data[0]}
+                                title={data[1].name}
+                                price={data[1].price}
+                                img={data[1].img}
+                                description={data[1].description}
+                                num={data[1].quantity}
                             />
                         )
                     })}
