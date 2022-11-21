@@ -108,19 +108,25 @@ export function UserForm({ preloadedValues, pid }) {
                         </div>
                     </div>
                 </div>
-                <div className='flex p-[2rem] rounded-3xl '>
-                    <div className='basis-1/3 text-center border'></div>
-                    <div className='basis-1/3 text-center border'>
+                <div className='flex px-[2rem] pb-[2rem] rounded-3xl '>
+                    <div className='basis-1/3 text-center'></div>
+                    <div className='basis-1/3 text-center'>
                         <div className='flex justify-between'>
-                            <button onClick={changeProductInfo}>
+                            <button
+                                onClick={changeProductInfo}
+                                className='bg-royal-purple-light p-2 rounded-2xl text-white hover:bg-white hover:text-royal-purple-light'
+                            >
                                 Save change
                             </button>
-                            <button onClick={deleteProduct}>
+                            <button
+                                onClick={deleteProduct}
+                                className='bg-rose-700 p-2 rounded-2xl text-white hover:bg-white hover:text-rose-700'
+                            >
                                 Delete Product
                             </button>
                         </div>
                     </div>
-                    <div className='basis-1/3 text-center border'></div>
+                    <div className='basis-1/3 text-center'></div>
                 </div>
             </form>
         </div>

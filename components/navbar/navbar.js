@@ -47,7 +47,7 @@ export default function Navbar({ payment }) {
                 <ul className='menu flex '>
                     {currentUser && currentData ? (
                         <>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/home'>Home</NavLink>
                             </li>
                             <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
@@ -57,7 +57,7 @@ export default function Navbar({ payment }) {
                                 <BasicMenuForActivity />
                             </li>
                             {currentData.role == 'admin' ? (
-                                <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                                <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                     <NavLink href='/manage'>
                                         Manage Product
                                     </NavLink>
@@ -65,7 +65,7 @@ export default function Navbar({ payment }) {
                             ) : (
                                 <></>
                             )}
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuForMyprofile
                                     name={currentData.firstName}
                                 />
@@ -73,21 +73,16 @@ export default function Navbar({ payment }) {
                         </>
                     ) : (
                         <>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/'>Home</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/searchAmulet'>Search</NavLink>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
+                                <BasicMenuForSearch />
                             </li>
                             <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/searchsanc'>
-                                    Search sanc
-                                </NavLink>
-                            </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/login'>Log In</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/signup'>Sign Up</NavLink>
                             </li>
                         </>
