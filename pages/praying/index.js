@@ -1,8 +1,4 @@
 import Navbar from '../../components/navbar/navbar'
-// import Select from '@mui/material/Select/Select'
-// import MenuItem from '@mui/material/MenuItem/MenuItem'
-// import InputLabel from '@mui/material/InputLabel'
-import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import {
     FormGroup,
@@ -68,10 +64,9 @@ function Praying() {
                                     id='sanctuary-select'
                                     value={sanctuary}
                                     onChange={handleChange}
-                                    // className='form-control block w-full h-10 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid
-                                    //     border-gray-300 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600'
+
                                     className='text-white'
-                                    // className
+
                                 >
                                     <MenuItem value={'Lakshmi Shrine'}>
                                         Lakshmi Shrine

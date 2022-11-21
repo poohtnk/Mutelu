@@ -5,7 +5,7 @@ import { BasicMenuForActivity, BasicMenuForMyprofile } from './dropdown'
 import { NavLink } from './navlink'
 import { getDatabase, ref, onValue } from 'firebase/database'
 
-export default function Navbar({ fixed }) {
+export default function Navbar({ payment }) {
     const [currentUser, setCurrentUser] = useState(null)
     const [currentData, setCurrentData] = useState(null)
     useEffect(() => {
@@ -21,6 +21,18 @@ export default function Navbar({ fixed }) {
             }
         })
     }, [])
+    if (payment) {
+        return (
+            <div className='bg-white text-black drop-shadow-md'>
+                <nav className='flex justify-between px-[2rem] py-[1.5rem]'>
+                    <div className='flex text-3xl font-bold'>
+                        <div className='text-royal-purple'>M</div>
+                        <div>utelu</div>
+                    </div>
+                </nav>
+            </div>
+        )
+    }
     return (
         <div className='bg-white text-black drop-shadow-md'>
             <nav className='flex justify-between px-[2rem] py-[1.5rem]'>
