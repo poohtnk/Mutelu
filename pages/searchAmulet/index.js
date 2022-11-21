@@ -22,7 +22,7 @@ function SearchAmulet() {
         const query = event.target.value
         var updatedList = items
         updatedList = updatedList.filter((item) => {
-            return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+            return item[1].name.toLowerCase().indexOf(query.toLowerCase()) !== -1
         })
         setItemsForDisplay(updatedList)
     }

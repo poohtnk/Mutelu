@@ -1,26 +1,70 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Image from 'next/image'
-export function UserForm({ preloadedValues }) {
+import { getDatabase, ref, onValue, set, remove } from 'firebase/database'
+import Swal from 'sweetalert2'
+import { useRouter } from 'next/router'
+
+export function UserForm({ preloadedValues, pid }) {
     const { register, handleSubmit } = useForm({
         defaultValues: preloadedValues,
     })
     const [productName, setProductName] = useState(preloadedValues.name)
-    const onSubmit = (data) => {
-        alert(JSON.stringify(data))
-    }
+    const [price, setPrice] = useState(preloadedValues.price)
+    const [description, setDescription] = useState(preloadedValues.description)
+    const [amount, setAmount] = useState(preloadedValues.quantity)
+    const db = getDatabase()
     const handleProductNameInput = (e) => {
         setProductName(e.target.value)
+    }
+    const handlePrice = (e) => {
+        setPrice(e.target.value)
+    }
+    const handleDescription = (e) => {
+        setDescription(e.target.value)
+    }
+    const handleAmount = (e) => {
+        setAmount(e.target.value)
+    }
+    const router = useRouter()
+    const changeProductInfo = (e) => {
+        e.preventDefault()
+        set(ref(db, 'Amulet/' + pid), {
+            name: productName,
+            price: price,
+            quantity: amount,
+            description: description,
+            img: preloadedValues.img,
+        })
+        Swal.fire({
+            title: 'Product is edited!',
+            icon: 'success',
+            width: '20rem',
+            timer: 5000,
+        }).then((result) => {
+            router.push('/manage')
+        })
+    }
+    const deleteProduct = (e) => {
+        console.log('remove')
+        remove(ref(db, 'Amulet/' + pid))
+        console.log('remove')
+
+        Swal.fire({
+            title: 'Product is deleted!',
+            icon: 'success',
+            width: '20rem',
+            timer: 5000,
+        }).then((result) => {
+            router.push('/manage')
+        })
     }
     console.log(preloadedValues)
     return (
         <div>
-            <form
-                onSubmit={handleSubmit(onSubmit)}
-                className='bg-white drop-shadow-2xl mx-[10rem] rounded-3xl'
-            >
-                <div className='flex  p-[2rem] rounded-3xl'>
-                    <div className='basis-1/2'>
+            <form className='bg-white drop-shadow-2xl mx-[10rem] rounded-3xl'>
+                <div className='flex p-[2rem] rounded-3xl '>
+                    <div className='basis-1/2 text-center'>
                         <Image
                             src={preloadedValues.img}
                             alt='hello'
@@ -29,27 +73,58 @@ export function UserForm({ preloadedValues }) {
                             className='object-cover h-48 w-96 rounded-2xl'
                         />
                     </div>
-                    <div className='basis-1/2'>
-                        <div className='grid grid-cols-2'>
-                            <div className='text-3xl'>Product Name</div>
+                    <div className='basis-1/2 '>
+                        <div className='grid gap-y-2 grid-cols-1 p-3 '>
+                            <div className='text-2xl'>Product Name</div>
                             <input
                                 {...register('name')}
                                 placeholder='Product Name'
                                 type='text'
                                 onChange={handleProductNameInput}
-                                className='border border-black text-2xl'
+                                className='border border-slate-300 text-xl border border-royal-purple-light border-2 rounded-xl pl-3'
                             />
-                            <div className='text-3xl'>Price</div>
+                            <div className='text-2xl'>Price</div>
                             <input
                                 {...register('price')}
                                 placeholder='Price'
                                 type='text'
+                                onChange={handlePrice}
+                                className='border border-slate-300 text-xl border border-royal-purple-light border-2 rounded-xl pl-3'
+                            />
+                            <div className='text-2xl'>Description</div>
+                            <textarea
+                                rows='4'
+                                {...register('description')}
+                                placeholder='Description'
+                                type='text'
+                                onChange={handleDescription}
+                                className='border border-slate-300 text-sm border border-royal-purple-light border-2 rounded-xl pl-3'
+                            />
+                            <div className='text-2xl'>Amount</div>
+                            <input
+                                {...register('quantity')}
+                                placeholder='Amount'
+                                type='text'
+                                onChange={handleAmount}
+                                className='border border-slate-300 text-xl border border-royal-purple-light border-2 rounded-xl pl-3'
                             />
                         </div>
                     </div>
                 </div>
-
-                <button>Submit</button>
+                <div className='flex p-[2rem] rounded-3xl '>
+                    <div className='basis-1/3 text-center border'></div>
+                    <div className='basis-1/3 text-center border'>
+                        <div className='flex justify-between'>
+                            <button onClick={changeProductInfo}>
+                                Save change
+                            </button>
+                            <button onClick={deleteProduct}>
+                                Delete Product
+                            </button>
+                        </div>
+                    </div>
+                    <div className='basis-1/3 text-center border'></div>
+                </div>
             </form>
         </div>
     )

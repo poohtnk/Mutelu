@@ -7,7 +7,6 @@ import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 import Link from 'next/link'
 import { UserForm } from '../../components/form'
-import { getUserData } from './api'
 function EditProduct() {
     const router = useRouter()
     const pid = router.query
@@ -24,9 +23,9 @@ function EditProduct() {
     return (
         <div className='min-h-screen bg-mutelu_2 bg-cover'>
             <Navbar />
-            <div className='container mt-[5rem] mx-[10rem]  text-center'>
+            <div className='container mt-[5rem]'>
                 {item ? (
-                    <UserForm preloadedValues={item} />
+                    <UserForm preloadedValues={item} pid={pid.id} />
                 ) : (
                     <div>Loading...</div>
                 )}
