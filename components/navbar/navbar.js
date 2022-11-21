@@ -1,11 +1,15 @@
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { auth, logout } from '../../firebase/config'
-import { BasicMenuForActivity, BasicMenuForMyprofile } from './dropdown'
+import {
+    BasicMenuForActivity,
+    BasicMenuForMyprofile,
+    BasicMenuForSearch,
+} from './dropdown'
 import { NavLink } from './navlink'
 import { getDatabase, ref, onValue } from 'firebase/database'
 
-export default function Navbar({ fixed }) {
+export default function Navbar({ payment }) {
     const [currentUser, setCurrentUser] = useState(null)
     const [currentData, setCurrentData] = useState(null)
     useEffect(() => {
@@ -21,6 +25,18 @@ export default function Navbar({ fixed }) {
             }
         })
     }, [])
+    if (payment) {
+        return (
+            <div className='bg-white text-black drop-shadow-md'>
+                <nav className='flex justify-between px-[2rem] py-[1.5rem]'>
+                    <div className='flex text-3xl font-bold'>
+                        <div className='text-royal-purple'>M</div>
+                        <div>utelu</div>
+                    </div>
+                </nav>
+            </div>
+        )
+    }
     return (
         <div className='bg-white text-black drop-shadow-md'>
             <nav className='flex justify-between px-[2rem] py-[1.5rem]'>
@@ -34,15 +50,21 @@ export default function Navbar({ fixed }) {
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/home'>Home</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/searchAmulet'>Search</NavLink>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
+                                <BasicMenuForSearch />
                             </li>
                             <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/searchsanc'>Search sanc</NavLink>
+                                <BasicMenuForActivity />
                             </li>
-                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
-                                <BasicMenuforActivity />
-                            </li>
+                            {currentData.role == 'admin' ? (
+                                <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                                    <NavLink href='/manage'>
+                                        Manage Product
+                                    </NavLink>
+                                </li>
+                            ) : (
+                                <></>
+                            )}
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuForMyprofile
                                     name={currentData.firstName}
@@ -58,7 +80,9 @@ export default function Navbar({ fixed }) {
                                 <NavLink href='/searchAmulet'>Search</NavLink>
                             </li>
                             <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/searchsanc'>Search sanc</NavLink>
+                                <NavLink href='/searchsanc'>
+                                    Search sanc
+                                </NavLink>
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/login'>Log In</NavLink>

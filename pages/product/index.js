@@ -69,7 +69,7 @@ function Product() {
                             <AddIcon />
                         </button>
                     </div>
-                    <Link href={'/payment?id=' + pid.id + '&amount=' + num}>
+                    <Link href={'/checkout?id=' + pid.id + '&amount=' + num}>
                         <button className='bg-royal-purple-light px-6 py-1.5 rounded-3xl mt-5 text-2xl text-white hover:text-royal-purple-light hover:bg-white'>
                             Buy
                         </button>

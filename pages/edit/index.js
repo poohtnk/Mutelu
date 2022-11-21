@@ -1,9 +1,9 @@
 import Navbar from '../../components/navbar/navbar'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import React, { useEffect, useState } from 'react'
-import Card from '../../components/card'
+import Card2 from '../../components/card2'
 
-function SearchAmulet() {
+function Edit() {
     const [items, setItems] = useState([])
     const [itemsForDisplay, setItemsForDisplay] = useState([])
     const db = getDatabase()
@@ -26,6 +26,7 @@ function SearchAmulet() {
         })
         setItemsForDisplay(updatedList)
     }
+
     return (
         <div className='min-h-screen bg-gradient-to-b from-blue-200 to-fuchsia-200'>
             <Navbar />
@@ -39,10 +40,10 @@ function SearchAmulet() {
                     />
                 </div>
 
-                <div className='grid overflow-hidden grid-cols-6 auto-rows-auto gap-x-6 gap-y-10 grid-flow-row'>
+                <div className='grid overflow-hidden grid-cols-1 auto-rows-auto gap-x-6 gap-y-10 grid-flow-row'>
                     {itemsForDisplay.map((data) => {
                         return (
-                            <Card
+                            <Card2
                                 key={data[0]}
                                 id={data[0]}
                                 title={data[1].name}
@@ -59,4 +60,4 @@ function SearchAmulet() {
     )
 }
 
-export default SearchAmulet
+export default Edit
