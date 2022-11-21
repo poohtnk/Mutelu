@@ -19,23 +19,18 @@ function Checkout() {
 
     const handleNameInput = (e) => {
         setName(e.target.value)
-        console.log(name)
     }
     const handleAddressInput = (e) => {
         setAddress(e.target.value)
-        console.log(address)
     }
     const handlePostalCode = (e) => {
         setPostalCode(e.target.value)
-        console.log(postalCode)
     }
     const handleProvince = (e) => {
         setProvince(e.target.value)
-        console.log(province)
     }
     const handlePayment = (e) => {
         setPaymentType(e.target.value)
-        console.log(e.target.value)
     }
     const starCountRef = ref(db, '/Amulet/' + pid.id)
     useEffect(() => {

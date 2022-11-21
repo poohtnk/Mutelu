@@ -49,7 +49,6 @@ function Payment() {
         return true
     }
     function checkCCV(CCV) {
-        console.log(CCV)
         if (CCV.length != 3 && !isNaN(CCV)) return false
         else return true
     }

@@ -64,9 +64,7 @@ function Praying() {
                                     id='sanctuary-select'
                                     value={sanctuary}
                                     onChange={handleChange}
-
                                     className='text-white'
-
                                 >
                                     <MenuItem value={'Lakshmi Shrine'}>
                                         Lakshmi Shrine
@@ -97,7 +95,6 @@ function Praying() {
                                     color='secondary'
                                     disabled={!done}
                                     type='submit'
-                                    // className='bg-royal-purple-light text-white hover:text-royal-purple-light w-auto'
                                     variant='outlined'
                                     onClick={() => {
                                         Swal.fire({

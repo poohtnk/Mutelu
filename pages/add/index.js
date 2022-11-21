@@ -11,7 +11,6 @@ function Add() {
     const [productStock, setProductStock] = useState(0)
     const [productDescription, setProductDescription] = useState('')
     const database = getDatabase()
-    // const ref = ref('Amulet/1')
     const [productImg, setProductImg] = useState('')
     const router = useRouter()
     const onSubmit = (e) => {

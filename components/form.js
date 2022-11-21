@@ -46,9 +46,7 @@ export function UserForm({ preloadedValues, pid }) {
         })
     }
     const deleteProduct = (e) => {
-        console.log('remove')
         remove(ref(db, 'Amulet/' + pid))
-        console.log('remove')
 
         Swal.fire({
             title: 'Product is deleted!',
@@ -59,7 +57,6 @@ export function UserForm({ preloadedValues, pid }) {
             router.push('/manage')
         })
     }
-    console.log(preloadedValues)
     return (
         <div>
             <form className='bg-white drop-shadow-2xl mx-[10rem] rounded-3xl'>
