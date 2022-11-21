@@ -52,6 +52,15 @@ export default function Navbar({ payment }) {
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuForActivity />
                             </li>
+                            {currentData.role == 'admin' ? (
+                                <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                                    <NavLink href='/manage'>
+                                        Manage Product
+                                    </NavLink>
+                                </li>
+                            ) : (
+                                <></>
+                            )}
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuForMyprofile
                                     name={currentData.firstName}
