@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import Navbar from '../../components/navbar/navbar'
-import { provinces } from './provinces'
+import { provinces } from '../../data/provinces'
 import Link from 'next/link'
 
 function Checkout() {
