@@ -81,7 +81,7 @@ export function UserForm({ preloadedValues, pid }) {
                                 placeholder='Product Name'
                                 type='text'
                                 onChange={handleProductNameInput}
-                                className='border border-slate-300 text-xl border border-royal-purple-light border-2 rounded-xl pl-3'
+                                className='text-xl border-royal-purple-light border-2 rounded-xl pl-3'
                             />
                             <div className='text-2xl'>Price</div>
                             <input
@@ -89,7 +89,7 @@ export function UserForm({ preloadedValues, pid }) {
                                 placeholder='Price'
                                 type='text'
                                 onChange={handlePrice}
-                                className='border border-slate-300 text-xl border border-royal-purple-light border-2 rounded-xl pl-3'
+                                className='text-xl border-royal-purple-light border-2 rounded-xl pl-3'
                             />
                             <div className='text-2xl'>Description</div>
                             <textarea
@@ -98,7 +98,7 @@ export function UserForm({ preloadedValues, pid }) {
                                 placeholder='Description'
                                 type='text'
                                 onChange={handleDescription}
-                                className='border border-slate-300 text-sm border border-royal-purple-light border-2 rounded-xl pl-3'
+                                className='text-xl border-royal-purple-light border-2 rounded-xl pl-3'
                             />
                             <div className='text-2xl'>Amount</div>
                             <input
@@ -106,7 +106,7 @@ export function UserForm({ preloadedValues, pid }) {
                                 placeholder='Amount'
                                 type='text'
                                 onChange={handleAmount}
-                                className='border border-slate-300 text-xl border border-royal-purple-light border-2 rounded-xl pl-3'
+                                className='text-xl border-royal-purple-light border-2 rounded-xl pl-3'
                             />
                         </div>
                     </div>
