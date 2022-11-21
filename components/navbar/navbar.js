@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { auth, logout } from '../../firebase/config'
-import { BasicMenuForActivity, BasicMenuForMyprofile } from './dropdown'
+import {
+    BasicMenuForActivity,
+    BasicMenuForMyprofile,
+    BasicMenuForSearch,
+} from './dropdown'
 import { NavLink } from './navlink'
 import { getDatabase, ref, onValue } from 'firebase/database'
 
@@ -46,10 +50,10 @@ export default function Navbar({ payment }) {
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/home'>Home</NavLink>
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
-                                <NavLink href='/searchAmulet'>Search</NavLink>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
+                                <BasicMenuForSearch />
                             </li>
-                            <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
                                 <BasicMenuForActivity />
                             </li>
                             {currentData.role == 'admin' ? (
@@ -74,6 +78,11 @@ export default function Navbar({ payment }) {
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/searchAmulet'>Search</NavLink>
+                            </li>
+                            <li className='text-xl mx-[30px] pt-1 hover:text-royal-purple/80'>
+                                <NavLink href='/searchsanc'>
+                                    Search sanc
+                                </NavLink>
                             </li>
                             <li className='text-xl mx-[40px] pt-1 hover:text-royal-purple/80'>
                                 <NavLink href='/login'>Log In</NavLink>

@@ -82,3 +82,45 @@ export function BasicMenuForMyprofile({ name }) {
         </div>
     )
 }
+
+export function BasicMenuForSearch() {
+    const [anchorEl, setAnchorEl] = React.useState(null)
+    const open = Boolean(anchorEl)
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget)
+    }
+    const handleClose = () => {
+        setAnchorEl(null)
+    }
+
+    return (
+        <div>
+            <ButtonUnstyled
+                id='basic-button'
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup='true'
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                className='text-royal-purple/80'
+            >
+                Search
+            </ButtonUnstyled>
+            <Menu
+                id='basic-menu'
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                }}
+            >
+                <MenuItem onClick={handleClose}>
+                    <NavLink href='/searchsanc'>Sanctuary</NavLink>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <NavLink href='/searchAmulet'>Amulet</NavLink>
+                </MenuItem>
+            </Menu>
+        </div>
+    )
+}
