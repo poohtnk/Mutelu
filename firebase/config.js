@@ -20,15 +20,14 @@ import {
 } from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyA-fSx_8vdi5kTe2_xvSiDS5OO6In6BIm0',
-    authDomain: 'mutelu-f5e49.firebaseapp.com',
-    databaseURL:
-        'https://mutelu-f5e49-default-rtdb.asia-southeast1.firebasedatabase.app',
-    projectId: 'mutelu-f5e49',
-    storageBucket: 'mutelu-f5e49.appspot.com',
-    messagingSenderId: '541175842795',
-    appId: '1:541175842795:web:2f810d570e8cdfeaca7bae',
-    measurementId: 'G-FSC67BK1R7',
+    apiKey: process.env.NEXT_PUBLIC_apiKey,
+    authDomain: process.env.NEXT_PUBLIC_authDomain,
+    databaseURL: process.env.NEXT_PUBLIC_databaseURL,
+    projectId: process.env.NEXT_PUBLIC_projectId,
+    storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+    messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+    appId: process.env.NEXT_PUBLIC_appId,
+    measurementId: process.env.NEXT_PUBLIC_measurementId,
 }
 
 const app = initializeApp(firebaseConfig)

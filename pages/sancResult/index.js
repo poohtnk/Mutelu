@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 import Link from 'next/link'
 
-function sancResult() {
+function SancResult() {
     const router = useRouter()
     const pid = router.query
     const db = getDatabase()
@@ -42,4 +42,4 @@ function sancResult() {
         </div>
     )
 }
-export default sancResult
+export default SancResult
