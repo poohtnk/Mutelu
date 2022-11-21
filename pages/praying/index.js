@@ -69,8 +69,12 @@ function Praying() {
                                     <MenuItem value={'Lakshmi Shrine'}>
                                         Lakshmi Shrine
                                     </MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
+                                    <MenuItem value={'Ganesh Shrine'}>
+                                        Ganesh Shrine
+                                    </MenuItem>
+                                    <MenuItem value={'Trimurti Shrine'}>
+                                        Trimurti Shrine
+                                    </MenuItem>
                                 </Select>
                             </FormControl>
                             <div className='flex justify-center'>
@@ -83,7 +87,7 @@ function Praying() {
                             </div>
                             <TextField
                                 id='wish'
-                                className='w-full focus:bg-white border-8 border-another-purple '
+                                className='w-full focus:bg-white border-2 border-another-purple bg-white'
                                 variant='outlined'
                                 rows={8}
                                 multiline

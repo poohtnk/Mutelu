@@ -101,7 +101,6 @@ export function BasicMenuForSearch() {
                 aria-haspopup='true'
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-                className='text-royal-purple/80'
             >
                 Search
             </ButtonUnstyled>
