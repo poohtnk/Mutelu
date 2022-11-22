@@ -7,7 +7,9 @@ import {
     signInWithGoogle,
     logout,
 } from '../firebase/config'
+import useAppCheck from '../firebase/appCheck'
 export default function Home() {
+    useAppCheck()
     const router = useRouter()
     const [currentUser, setCurrentUser] = useState(null)
     useEffect(() => {

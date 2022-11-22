@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app'
+import { initializeApp, getApp } from 'firebase/app'
 import { getDatabase, set, ref } from 'firebase/database'
 import { getAnalytics } from 'firebase/analytics'
 import {
@@ -42,15 +42,12 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
-const appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider(
-        '6LfaOigjAAAAAF1w5llFfkV7eSgNcVsEIl3WTsLm'
-    ),
-
-    // Optional argument. If true, the SDK automatically refreshes App Check
-    // tokens as needed.
-    isTokenAutoRefreshEnabled: true,
-})
+// const appCheck = initializeAppCheck(getApp(), {
+//     provider: new ReCaptchaV3Provider(
+//         '6LfaOigjAAAAAF1w5llFfkV7eSgNcVsEIl3WTsLm'
+//     ),
+//     // isTokenAutoRefreshEnabled: true,
+// })
 const auth = getAuth(app)
 const db = getFirestore(app)
 const database = getDatabase(app)
@@ -130,4 +127,5 @@ export {
     sendPasswordReset,
     logout,
     database,
+    app,
 }
