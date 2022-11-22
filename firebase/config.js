@@ -18,7 +18,7 @@ import {
     where,
     addDoc,
 } from 'firebase/firestore'
-
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
 // const firebaseConfig = {
 //     apiKey: process.env.NEXT_PUBLIC_apiKey,
 //     authDomain: process.env.NEXT_PUBLIC_authDomain,
@@ -42,7 +42,15 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
+const appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider(
+        '6LfaOigjAAAAAF1w5llFfkV7eSgNcVsEIl3WTsLm'
+    ),
 
+    // Optional argument. If true, the SDK automatically refreshes App Check
+    // tokens as needed.
+    isTokenAutoRefreshEnabled: true,
+})
 const auth = getAuth(app)
 const db = getFirestore(app)
 const database = getDatabase(app)
