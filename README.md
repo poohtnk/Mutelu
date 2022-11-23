@@ -1,7 +1,7 @@
 ![Branches](.github/badges/badge-branches.svg)
-![Functions](coverage\badge-functions.svg)
-![Lines](coverage\badge-lines.svg)
-![Statements](coverage\badge-statements.svg)
+![Functions](.github/badges/badge-functions.svg)
+![Lines](.github/badges/badge-lines.svg)
+![Statements](.github/badges/badge-statements.svg)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
