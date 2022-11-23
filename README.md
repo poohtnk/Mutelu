@@ -1,4 +1,4 @@
-![Branches](coverage\badge-branches.svg)
+![Branches](.github/badges/badge-branches.svg)
 ![Functions](coverage\badge-functions.svg)
 ![Lines](coverage\badge-lines.svg)
 ![Statements](coverage\badge-statements.svg)

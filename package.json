@@ -9,7 +9,7 @@
         "lint": "next lint",
         "test": "jest --coverage",
         "test:coverage": "npm test -- --coverage",
-        "test:badges": "npm run test:coverage  && jest-coverage-badges"
+        "test:badges": "npm run test:coverage  && jest-coverage-badges input .github/badges/coverage-summary.json output .github/badges"
     },
     "dependencies": {
         "@emotion/react": "^11.10.4",
