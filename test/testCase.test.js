@@ -79,6 +79,7 @@ describe('Test CheckExpDate', () => {
         // The date is less than the current date
         expect(checkExpDate('12/2000')).toBeFalsy()
         // The month is exceed 12
+        expect(checkExpDate('14/2000')).toBeFalsy()
         expect(checkExpDate('121/2000')).toBeFalsy()
         // The format is wrong (use - instead of /)
         expect(checkExpDate('12-2000')).toBeFalsy()
