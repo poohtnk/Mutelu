@@ -11,19 +11,6 @@ test.describe('test', () => {
         await expect(page.locator('"Test"').nth(0)).toBeVisible()
         await expect(page.locator('"Test"').nth(1)).toBeVisible()
     })
-    test('Should logout successfully', async ({ page }) => {
-        await page.goto('/')
-        await page.locator('"Log In"').click()
-        await page.getByPlaceholder('E-mail Address').fill('test@test.com')
-        await page.getByPlaceholder('Password').fill('test1234')
-        await page.getByRole('button', { name: 'Login' }).click()
-        await expect(page.locator('"Hello"')).toBeVisible()
-        await expect(page.locator('"Test"').nth(0)).toBeVisible()
-        await expect(page.locator('"Test"').nth(1)).toBeVisible()
-        await page.locator('"Test"').nth(0).click()
-        await page.locator('"Log Out"').click()
-        await expect(page.locator('"MUTELU"')).toBeVisible()
-    })
     test('Should successfully login and pray', async ({ page }) => {
         await page.goto('/')
         // login first
@@ -44,6 +31,12 @@ test.describe('test', () => {
     })
     test('Should successfully buy a product', async ({ page }) => {
         await page.goto('/')
+        // login first
+        await page.locator('"Log In"').click()
+        await page.getByPlaceholder('E-mail Address').fill('test@test.com')
+        await page.getByPlaceholder('Password').fill('test1234')
+        await page.getByRole('button', { name: 'Login' }).click()
+
         await page.locator('"Search"').click()
         await page.locator('"Amulet"').click()
         await page.locator('"GUAN YU bracelet"').click()
@@ -56,6 +49,8 @@ test.describe('test', () => {
         await page.getByRole('button', { name: 'Proceed to Payment' }).click()
         await page.getByRole('button', { name: 'Submit' }).click()
         await page.getByRole('button', { name: 'OK' }).click()
-        await expect(page.locator('"MUTELU"')).toBeVisible()
+        await expect(page.locator('"Hello"')).toBeVisible()
+        await expect(page.locator('"Test"').nth(0)).toBeVisible()
+        await expect(page.locator('"Test"').nth(1)).toBeVisible()
     })
 })
